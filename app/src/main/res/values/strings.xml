@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">To do List</string>
     <string name="today_tasks">Today\'s Tasks</string>
+    <string name="new_task">New Task</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="date">Date</string>
+    <string name="hour">Hour</string>
+    <string name="save">Save</string>
 </resources>
