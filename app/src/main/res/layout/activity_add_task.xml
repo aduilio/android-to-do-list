@@ -109,18 +109,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_save"
+        android:id="@+id/bt_save"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="@string/save"
-        app:layout_constraintBottom_toTopOf="@id/mb_cancel"
+        app:layout_constraintBottom_toTopOf="@id/bt_cancel"
         app:layout_constraintEnd_toEndOf="@id/glEnd"
         app:layout_constraintStart_toStartOf="@id/glStart" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/mb_cancel"
+        android:id="@+id/bt_cancel"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
