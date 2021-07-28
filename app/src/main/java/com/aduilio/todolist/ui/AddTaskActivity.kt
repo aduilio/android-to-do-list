@@ -3,9 +3,11 @@ package com.aduilio.todolist.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aduilio.todolist.databinding.ActivityAddTaskBinding
+import com.aduilio.todolist.datasource.TaskDataSource
 import com.aduilio.todolist.extension.format
 import com.aduilio.todolist.extension.from
 import com.aduilio.todolist.extension.text
+import com.aduilio.todolist.model.Task
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -19,12 +21,7 @@ class AddTaskActivity : AppCompatActivity() {
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initComponents()
         initListeners()
-    }
-
-    private fun initComponents() {
-
     }
 
     private fun initListeners() {
@@ -37,6 +34,13 @@ class AddTaskActivity : AppCompatActivity() {
         }
 
         binding.btSave.setOnClickListener {
+            TaskDataSource.insert(
+                Task(
+                    title = binding.tilTitle.text,
+                    description = binding.tilDescription.text,
+                    date = binding.tilDate.text
+                )
+            )
             finish()
         }
 
