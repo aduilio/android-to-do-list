@@ -1,2 +1,2 @@
 # To do List App
-## App developed for the Digital Inivation One course
+## App developed in the Digital Inovation One course
