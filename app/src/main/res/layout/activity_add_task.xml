@@ -41,7 +41,9 @@
             android:id="@+id/et_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapSentences" />
+            android:inputType="textCapSentences"
+            android:maxLength="40"
+            android:maxLines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -60,7 +62,10 @@
             android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textCapSentences" />
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLength="150"
+            android:maxLines="4" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
