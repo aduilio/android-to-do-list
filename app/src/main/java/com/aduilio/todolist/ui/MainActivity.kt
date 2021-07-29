@@ -2,6 +2,7 @@ package com.aduilio.todolist.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.aduilio.todolist.adapter.TaskListAdapter
 import com.aduilio.todolist.databinding.ActivityMainBinding
@@ -52,6 +53,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateList() {
+        val list = TaskDataSource.getList()
         adapter.submitList(TaskDataSource.getList())
+
+        binding.layoutEmpty.emptyLayout.visibility = if (list.isEmpty()) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 }
