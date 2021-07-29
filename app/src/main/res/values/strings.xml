@@ -8,4 +8,6 @@
     <string name="hour">Hour</string>
     <string name="save">Save</string>
     <string name="add_new_task_description">Add a new task</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.rvTasks.adapter = adapter
 
+        initComponents()
         initListeners()
     }
 
@@ -27,6 +28,15 @@ class MainActivity : AppCompatActivity() {
 
         adapter.submitList(TaskDataSource.getList())
         adapter.notifyDataSetChanged()
+    }
+
+    private fun initComponents() {
+        adapter.listenerEdit = {
+            startActivity(Intent(this, AddTaskActivity::class.java))
+        }
+
+        adapter.listenerDelete = {
+        }
     }
 
     private fun initListeners() {
