@@ -26,16 +26,22 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        adapter.submitList(TaskDataSource.getList())
-        adapter.notifyDataSetChanged()
+        updateList()
     }
 
     private fun initComponents() {
         adapter.listenerEdit = {
-            startActivity(Intent(this, AddTaskActivity::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    AddTaskActivity::class.java
+                ).putExtra(AddTaskActivity.TASK_ID, it.id)
+            )
         }
 
         adapter.listenerDelete = {
+            TaskDataSource.delete(it)
+            updateList()
         }
     }
 
@@ -43,5 +49,9 @@ class MainActivity : AppCompatActivity() {
         binding.fabNewTask.setOnClickListener {
             startActivity(Intent(this, AddTaskActivity::class.java))
         }
+    }
+
+    private fun updateList() {
+        adapter.submitList(TaskDataSource.getList())
     }
 }
